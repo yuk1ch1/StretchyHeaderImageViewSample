@@ -13,6 +13,7 @@
 		91B44B9727647995004D9832 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B44B9627647995004D9832 /* ViewController.swift */; };
 		91B44B9C27647998004D9832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B44B9B27647998004D9832 /* Assets.xcassets */; };
 		91B44B9F27647998004D9832 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B44B9D27647998004D9832 /* LaunchScreen.storyboard */; };
+		91B8D262276A25AB0016A8AE /* StretchyTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B8D261276A25AB0016A8AE /* StretchyTableHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		91B44B9B27647998004D9832 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91B44B9E27647998004D9832 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91B44BA027647998004D9832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91B8D261276A25AB0016A8AE /* StretchyTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyTableHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				91B44B9227647995004D9832 /* AppDelegate.swift */,
 				91B44B9427647995004D9832 /* SceneDelegate.swift */,
 				91B44B9627647995004D9832 /* ViewController.swift */,
+				91B8D261276A25AB0016A8AE /* StretchyTableHeaderView.swift */,
 				91A026DD2765B42200E597D4 /* UIView+AutoLayout.swift */,
 				91B44B9B27647998004D9832 /* Assets.xcassets */,
 				91B44B9D27647998004D9832 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91B44B9727647995004D9832 /* ViewController.swift in Sources */,
+				91B8D262276A25AB0016A8AE /* StretchyTableHeaderView.swift in Sources */,
 				91A026DE2765B42200E597D4 /* UIView+AutoLayout.swift in Sources */,
 				91B44B9327647995004D9832 /* AppDelegate.swift in Sources */,
 				91B44B9527647995004D9832 /* SceneDelegate.swift in Sources */,
