@@ -5,67 +5,55 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private lazy var tableView: UITableView = {
         let view = UITableView()
         view.delegate = self
+        view.dataSource = self
         view.contentInsetAdjustmentBehavior = .never
+        view.register(SectionHeaderView.self, forHeaderFooterViewReuseIdentifier: "SectionHeader")
+        view.register(ContentCell.self, forCellReuseIdentifier: "Cell")
         return view
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addAutoLayoutedSubview(tableView)
-        NSLayoutConstraint.activate(tableView.fillConstraints())
+        setupTableView()
+        makeConstraints()
+    }
 
-        let headerView = StretchyTableHeaderView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 328.3333333333333))
+    private func makeConstraints() {
+        view.addAutoLayoutedSubview(tableView)
+        NSLayoutConstraint.activate(tableView.fillConstraintsWithTopSafeArea())
+    }
+
+    private func setupTableView() {
+        let headerView = StretchyTableHeaderView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: StretchyTableHeaderView.imageHeihgt))
         self.tableView.tableHeaderView = headerView
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? ContentCell else {
+            fatalError("Failed To get a CustomCell")
+            return UITableViewCell() }
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let sectionHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SectionHeader") as? SectionHeaderView
+        return sectionHeader
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let headerView = self.tableView.tableHeaderView as! StretchyTableHeaderView
         headerView.scrollViewDidScroll(scrollView: scrollView)
-    }
-}
-
-
-class StretchyTableHeaderView: UIView {
-    private var imageViewHeight = NSLayoutConstraint()
-    private var imageViewBottom = NSLayoutConstraint()
-
-    private lazy var imageView: UIImageView = {
-        let view = UIImageView(image: UIImage(named: "headerImage"))
-        view.backgroundColor = .yellow
-        view.contentMode = .scaleAspectFill
-        return view
-    }()
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
-        setConstraints()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
-    func setConstraints() {
-        self.addAutoLayoutedSubview(imageView)
-        imageViewBottom = imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-        imageViewHeight = imageView.heightAnchor.constraint(equalTo: self.heightAnchor)
-
-        NSLayoutConstraint.activate([
-            imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            imageViewBottom,
-            imageViewHeight,
-        ])
-    }
-
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        let offsetY = -(scrollView.contentOffset.y + scrollView.contentInset.top)
-        imageView.clipsToBounds = offsetY <= 0
-        imageViewBottom.constant = offsetY >= 0 ? 0 : -offsetY/2
-        imageViewHeight.constant = max(offsetY + scrollView.contentInset.top, scrollView.contentInset.top)
     }
 }
