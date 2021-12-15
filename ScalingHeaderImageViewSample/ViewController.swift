@@ -30,6 +30,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     private func setupTableView() {
         let headerView = StretchyTableHeaderView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: StretchyTableHeaderView.imageHeihgt))
         self.tableView.tableHeaderView = headerView
+
+        let view = UIView()
+        view.backgroundColor = .orange
+        tableView.tableHeaderView?.addAutoLayoutedSubview(view)
+        NSLayoutConstraint.activate([
+            view.centerXAnchor.constraint(equalTo: tableView.tableHeaderView!.centerXAnchor),
+            view.widthAnchor.constraint(equalTo: tableView.tableHeaderView!.widthAnchor),
+            view.heightAnchor.constraint(equalToConstant: 30),
+            view.topAnchor.constraint(equalTo: tableView.tableHeaderView!.bottomAnchor)
+        ])
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
