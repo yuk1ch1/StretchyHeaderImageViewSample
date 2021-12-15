@@ -15,6 +15,7 @@
 		91B44B9F27647998004D9832 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B44B9D27647998004D9832 /* LaunchScreen.storyboard */; };
 		91B8D262276A25AB0016A8AE /* StretchyTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B8D261276A25AB0016A8AE /* StretchyTableHeaderView.swift */; };
 		91B8D268276A26FD0016A8AE /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B8D267276A26FD0016A8AE /* SectionHeaderView.swift */; };
+		91B8D26A276A27A10016A8AE /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B8D269276A27A10016A8AE /* ContentCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		91B44BA027647998004D9832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91B8D261276A25AB0016A8AE /* StretchyTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyTableHeaderView.swift; sourceTree = "<group>"; };
 		91B8D267276A26FD0016A8AE /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		91B8D269276A27A10016A8AE /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				91B44B9227647995004D9832 /* AppDelegate.swift */,
 				91B44B9427647995004D9832 /* SceneDelegate.swift */,
 				91B44B9627647995004D9832 /* ViewController.swift */,
+				91B8D269276A27A10016A8AE /* ContentCell.swift */,
 				91B8D267276A26FD0016A8AE /* SectionHeaderView.swift */,
 				91B8D261276A25AB0016A8AE /* StretchyTableHeaderView.swift */,
 				91A026DD2765B42200E597D4 /* UIView+AutoLayout.swift */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91B44B9727647995004D9832 /* ViewController.swift in Sources */,
+				91B8D26A276A27A10016A8AE /* ContentCell.swift in Sources */,
 				91B8D268276A26FD0016A8AE /* SectionHeaderView.swift in Sources */,
 				91B8D262276A25AB0016A8AE /* StretchyTableHeaderView.swift in Sources */,
 				91A026DE2765B42200E597D4 /* UIView+AutoLayout.swift in Sources */,
